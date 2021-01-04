@@ -11,7 +11,7 @@ RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cl
     ./google-cloud-sdk/install.sh ; \
     rm *.tar.gz
 RUN echo "source /google-cloud-sdk/path.zsh.inc" >> $HOME/.extras ; \
-    echo "export PATH=/google-cloud-sdk/bin:/root/go/bin/:/root/dev/go/bin:\$PATH" >> $HOME/.extras
+    echo "export PATH=/google-cloud-sdk/bin:/root/go/bin/:/root/dev/go/bin:\$PATH" >> $HOME/.extras \
     echo "source <(kubectl completion zsh)" >> $HOME/.extras
 RUN /google-cloud-sdk/bin/gcloud components install app-engine-java kubectl beta
 
